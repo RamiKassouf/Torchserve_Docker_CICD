@@ -36,6 +36,7 @@ jobs:
             if: ${{ failure() }}
             uses: dawidd6/action-send-mail@v2
             with:
+                    from: ${{ secrets.EMAIL_USERNAME }}
                     server_address: smtp.gmail.com
                     server_port: 587
                     username: ${{ secrets.EMAIL_USERNAME }}
