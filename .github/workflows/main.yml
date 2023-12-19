@@ -21,7 +21,8 @@ jobs:
             run: pwd
 
           - name: copy model binary
-            run: cp C:\Users\User\Desktop\University\DEM CCE\Anné 3\Sem 1\CI CD\Final Project\pytorch_model.bin .
+            run: |
+                cp "/mnt/c/Users/User/Desktop/University/DEM CCE/Anné 3/Sem 1/CI CD/Final Project/pytorch_model.bin" .
 
           - name: install dependencies
             run: |
