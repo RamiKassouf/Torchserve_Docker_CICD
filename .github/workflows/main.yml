@@ -20,6 +20,9 @@ jobs:
           - name: Print current directory
             run: pwd
 
+          - name: copy model binary
+            run: cp C:\Users\User\Desktop\University\DEM CCE\Anné 3\Sem 1\CI CD\Final Project\pytorch_model.bin .
+
           - name: install dependencies
             run: |
                 pip install -r requirements.txt
