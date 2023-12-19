@@ -11,13 +11,16 @@ on:
 
 jobs:
     build:
-        runs-on: pytorch/torchserve:latest-cpu
+        runs-on: ubuntu-latest
     
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
-    
 
+          - name: install dependencies
+            run: |
+                pip install -r requirements.txt
+    
           - name: Build and test
             run: |
                 python -m unittest unit_test.py
@@ -42,7 +45,6 @@ jobs:
 
           - name: Build and push Docker image
             run: |
-                    # Add your Docker build and push commands here
-                    docker build -t Torchserve_Docker_CICD:latest .
-                    docker tag Torchserve_Docker_CICD:latest ${{ secrets.DOCKER_USERNAME }}/Torchserve_Docker_CICD:latest
-                    docker push ${{ secrets.DOCKER_USERNAME }}/Torchserve_Docker_CICD:latest
+                    docker build -t torchserve_docker_cicd:latest .
+                    docker tag torchserve_docker_cicd:latest ${{ secrets.DOCKER_USERNAME }}/torchserve_docker_cicd:latest
+                    docker push ${{ secrets.DOCKER_USERNAME }}/torchserve_docker_cicd:latest
