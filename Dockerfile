@@ -9,6 +9,7 @@ COPY ner_handler.py index_to_name.json  /home/model-server/
 COPY special_tokens_map.json tokenizer_config.json config.json tokenizer.json vocab.txt  pytorch_model.bin /home/model-server/NER_BERT_Model/
 COPY requirements.txt /home/model-server/
 
+
 #Install dependencies
 RUN pip install -U -r /home/model-server/requirements.txt
 
