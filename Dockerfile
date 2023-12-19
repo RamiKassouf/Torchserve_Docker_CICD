@@ -17,13 +17,13 @@ WORKDIR /home/model-server/
 
 # Create the model archive
 RUN torch-model-archiver \
-  --model-name=NER_BERT_Model \
-  --version=1.0 \
-  --model-file=NER_BERT_Model/pytorch_model.bin \
-  --handler=/home/model-server/ner_handler.py \
-  --extra-files=NER_BERT_Model/config.json,index_to_name.json,NER_BERT_Model/special_tokens_map.json,\
+  --model-name NER_BERT_Model \
+  --version 1.0 \
+  --model-file NER_BERT_Model/pytorch_model.bin \
+  --handler /home/model-server/ner_handler.py \
+  --extra-files NER_BERT_Model/config.json,index_to_name.json,NER_BERT_Model/special_tokens_map.json,\
                 NER_BERT_Model/tokenizer_config.json,NER_BERT_Model/tokenizer.json \
-  --export-path=model-store
+  --export-path model-store
 
 CMD ["torchserve", \
      "--start", \
