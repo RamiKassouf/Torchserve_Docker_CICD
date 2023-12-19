@@ -17,12 +17,9 @@ jobs:
           - name: Checkout code
             uses: actions/checkout@v2
 
-          - name: Print current directory
-            run: pwd
-
           - name: copy model binary
             run: |
-                cp "/Users/User/Desktop/University/DEM CCE/Anné 3/Sem 1/CI CD/Final Project/pytorch_model.bin" .
+                cp C:\Users\User\Desktop\University\DEM_CCE\Anne_3\Sem_1\CI_CD\Final_Project\pytorch_model.bin .
 
           - name: install dependencies
             run: |
