@@ -19,11 +19,10 @@ WORKDIR /home/model-server/
 RUN torch-model-archiver \
   --model-name=NER_BERT_Model \
   --version=1.0 \
-  --model-file=NER_BERT_Model/pytorch_model.bin \
+  --model-file=/home/model-server/NER_BERT_Model/pytorch_model.bin \
   --handler=/home/model-server/ner_handler.py \
-  --extra-files=NER_BERT_Model/config.json,index_to_name.json,NER_BERT_Model/special_tokens_map.json,\
-                NER_BERT_Model/tokenizer_config.json,NER_BERT_Model/tokenizer.json \
-  --export-path=model-store
+  --extra-files=/home/model-server/NER_BERT_Model/config.json,/home/model-server/index_to_name.json,/home/model-server/NER_BERT_Model/special_tokens_map.json,/home/model-server/NER_BERT_Model/tokenizer_config.json,/home/model-server/NER_BERT_Model/tokenizer.json \
+  --export-path=/home/model-server/model-store
 
 CMD ["torchserve", \
      "--start", \
