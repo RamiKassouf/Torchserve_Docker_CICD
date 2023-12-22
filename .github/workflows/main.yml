@@ -42,6 +42,9 @@ jobs:
                 subject: CI/CD Pipeline Failed
                 body: The CI/CD pipeline has failed. Please check the build logs for more information.
                 
+          - name: pwd
+            run: pwd
+            
           - name: create mar file
             run: | 
                 torch-model-archiver --force `
