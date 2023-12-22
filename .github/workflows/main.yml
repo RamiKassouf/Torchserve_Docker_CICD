@@ -18,7 +18,7 @@ jobs:
 
           - name: copy model binary
             run: |
-                cp C:\Users\User\Desktop\University\DEM_CCE\Anne_3\Sem_1\CI_CD\Final_Project\NER_BERT_Model\pytorch_model.bin .
+                cp C:\Users\User\Desktop\University\DEM_CCE\Anne_3\Sem_1\CI_CD\Final_Project\NER_BERT_Model\pytorch_model.bin ./NER_BERT_Model/
 
           - name: install dependencies
             run: |
@@ -50,7 +50,7 @@ jobs:
                 --model-file=./NER_BERT_Model/pytorch_model.bin `
                 --handler=ner_handler.py `
                 --extra-files=./NER_BERT_Model/config.json,./index_to_name.json,./NER_BERT_Model/special_tokens_map.json,./NER_BERT_Model/tokenizer_config.json,./NER_BERT_Model/tokenizer.json `
-                --export-path=./model-store
+                --export-path=model-store
 
           - name: Docker login
             uses: docker/login-action@v1
