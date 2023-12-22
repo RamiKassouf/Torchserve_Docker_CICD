@@ -42,8 +42,8 @@ jobs:
                 subject: CI/CD Pipeline Failed
                 body: The CI/CD pipeline has failed. Please check the build logs for more information.
                 
-          - name: pwd
-            run: pwd
+          - name: cd 
+            run: cd .
 
           - name: create mar file
             run: | 
@@ -52,7 +52,7 @@ jobs:
                 --version=1.0 `
                 --model-file=pytorch_model.bin `
                 --handler=ner_handler.py `
-                --extra-files=NER_BERT_Model/config.json,index_to_name.json,NER_BERT_Model/special_tokens_map.json,NER_BERT_Model/tokenizer_config.json,NER_BERT_Model/tokenizer.json `
+                --extra-files=./NER_BERT_Model/config.json,index_to_name.json,NER_BERT_Model/special_tokens_map.json,NER_BERT_Model/tokenizer_config.json,NER_BERT_Model/tokenizer.json `
 
           - name: Docker login
             uses: docker/login-action@v1
