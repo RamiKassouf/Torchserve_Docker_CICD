@@ -1,7 +1,7 @@
 FROM pytorch/torchserve:latest-cpu
 
 # Create the directories for the model store
-RUN mkdir -p /home/model-server/model-store
+RUN mkdir -p model-store
 
 # Copy the model archive file to the container
 COPY model-store/NER_BERT_Model.mar /home/model-server/model-store/
