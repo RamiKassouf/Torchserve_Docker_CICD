@@ -12,7 +12,6 @@ on:
 jobs:
     build:
         runs-on: self-hosted
-    
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
@@ -44,15 +43,15 @@ jobs:
                 body: The CI/CD pipeline has failed. Please check the build logs for more information.
                 
           - name: create mar file
-           run: | 
-            torch-model-archiver \
-            --model-name=NER_BERT_Model \
-            --version=1.0 \
-            --model-file=./NER_BERT_Model/pytorch_model.bin \
-            --handler=ner_handler.py \
-            --extra-files=./NER_BERT_Model/config.json,./index_to_name.json,./NER_BERT_Model/special_tokens_map.json,./NER_BERT_Model/tokenizer_config.json,./NER_BERT_Model/tokenizer.json \
-            --export-path=./model-store
-            
+            run: | 
+              torch-model-archiver \
+              --model-name=NER_BERT_Model \
+              --version=1.0 \
+              --model-file=./NER_BERT_Model/pytorch_model.bin \
+              --handler=ner_handler.py \
+              --extra-files=./NER_BERT_Model/config.json,./index_to_name.json,./NER_BERT_Model/special_tokens_map.json,./NER_BERT_Model/tokenizer_config.json,./NER_BERT_Model/tokenizer.json \
+              --export-path=./model-store
+
           - name: Docker login
             uses: docker/login-action@v1
             with:
