@@ -18,7 +18,7 @@ jobs:
 
           - name: copy model binary
             run: |
-                cp C:\Users\User\Desktop\University\DEM_CCE\Anne_3\Sem_1\CI_CD\Final_Project\NER_BERT_Model\pytorch_model.bin ./NER_BERT_Model/
+                cp C:\Users\User\Desktop\University\DEM_CCE\Anne_3\Sem_1\CI_CD\Final_Project\NER_BERT_Model\pytorch_model.bin ./NER_BERT_Model
 
           - name: install dependencies
             run: |
@@ -44,7 +44,7 @@ jobs:
                 
           - name: create mar file
             run: | 
-                torch-model-archiver `
+                torch-model-archiver --force `
                 --model-name=NER_BERT_Model `
                 --version=1.0 `
                 --model-file=./NER_BERT_Model/pytorch_model.bin `
