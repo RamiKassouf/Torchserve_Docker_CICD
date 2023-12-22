@@ -14,11 +14,15 @@ To get started with this project, follow the instructions below.
 
 3. Create a model
 
-4. Create a Dockerfile for building the container
+4. Create test cases for the model
 
-5. Create a github actions workflow file for building and pushing the container to Dockerhub
+5. Create a Dockerfile for building the container
 
-6. Run the workflow on a self-hosted runner so you don't have to push a big model to github
+6. Create a github actions workflow file for building and pushing the container to Dockerhub
+
+7. Add branch protection rules to the github repository applying the tests
+
+8. Run the workflow on a self-hosted runner so you don't have to push a big model to github
 
 ## Usage
 
